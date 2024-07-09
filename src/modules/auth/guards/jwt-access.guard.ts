@@ -33,6 +33,7 @@ export class JwtAccessGuard implements CanActivate {
     const accessToken = request.get('Authorization')?.split('Bearer ')[1];
     if (!accessToken) {
       throw new UnauthorizedException();
+      ///asd
     }
     const payload = await this.tokenService.verifyToken(
       accessToken,
